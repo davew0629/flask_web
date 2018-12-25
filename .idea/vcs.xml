@@ -3,5 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/flask-pro01" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/flask_pro01" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/flask_pro02" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/flask_pro02/flask_pro02" vcs="Git" />
   </component>
 </project>

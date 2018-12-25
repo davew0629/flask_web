@@ -1,0 +1,39 @@
+path：       请求页面的全路径，不包括域名
+method：     请求中使用的HTTP方法的字符串表示。全大写表示。例如
+                   if  req.method=="GET":
+                             do_something()
+                   elseif req.method=="POST":
+                             do_something_else()
+GET:         包含所有HTTP GET参数的类字典对象
+POST：       包含所有HTTP POST参数的类字典对象
+             服务器收到空的POST请求的情况也是可能发生的，也就是说，表单form通过
+             HTTP POST方法提交请求，但是表单中可能没有数据，因此不能使用
+             if req.POST来判断是否使用了HTTP POST 方法；应该使用  if req.method=="POST"
+COOKIES:     包含所有cookies的标准Python字典对象；keys和values都是字符串。
+FILES：      包含所有上传文件的类字典对象；FILES中的每一个Key都是<input type="file" name="" />标签中
+            name属性的值，FILES中的每一个value同时也是一个标准的python字典对象，包含下面三个Keys：
+            filename：      上传文件名，用字符串表示
+            content_type:   上传文件的Content Type
+            content：       上传文件的原始内容
+user：       是一个django.contrib.auth.models.User对象，代表当前登陆的用户。如果访问用户当前
+             没有登陆，user将被初始化为django.contrib.auth.models.AnonymousUser的实例。你
+             可以通过user的is_authenticated()方法来辨别用户是否登陆：
+             if req.user.is_authenticated();只有激活Django中的AuthenticationMiddleware
+             时该属性才可用
+session：    唯一可读写的属性，代表当前会话的字典对象；自己有激活Django中的session支持时该属性才可用。
+META：       一个标准的Python字典包含所有可用的HTTP头。可用标题取决于客户端和服务器，但这里是一些例子：
+            CONTENT_LENGTH       – 请求体的长度（一个字符串）。
+            CONTENT_TYPE         – 请求体的类型。
+            HTTP_ACCEPT          - 为响应–可以接受的内容类型。
+            HTTP_ACCEPT_ENCODING – 接受编码的响应
+            HTTP_ACCEPT_LANGUAGE – 接受语言的反应
+            HTTP_HOST            – 客户端发送的HTTP主机头。
+            HTTP_REFERER         – 参考页面
+            HTTP_USER_AGENT      – 客户端的用户代理字符串。
+            QUERY_STRING         – 查询字符串，作为一个单一的（分析的）字符串。
+            REMOTE_ADDR          – 客户端的IP地址
+            REMOTE_HOST          – 客户端的主机名
+            REMOTE_USER          – 用户通过Web服务器的身份验证。
+            REQUEST_METHOD       – 字符串，如"GET"或"POST"
+            SERVER_NAME          – 服务器的主机名
+            SERVER_PORT          – 服务器的端口（一个字符串
